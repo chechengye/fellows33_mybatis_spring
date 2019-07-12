@@ -13,9 +13,13 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         <property name="configLocation" value="classpath:com/weichuang/mybatis/SqlMapConfig.xml"></property>
     </bean>
 
-    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <!--<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
         <property name="mapperInterface" value="com.weichuang.dao.UserMapper"/>
+    </bean>-->
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.weichuang.dao"></property>
     </bean>
 
 

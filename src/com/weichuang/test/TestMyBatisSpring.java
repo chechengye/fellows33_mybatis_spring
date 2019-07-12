@@ -10,7 +10,8 @@ public class TestMyBatisSpring {
     @Test
     public void testFn(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-        UserMapper userMapper = (UserMapper)applicationContext.getBean("userMapper");
+       /* UserMapper userMapper = (UserMapper)applicationContext.getBean("userMapper");*/
+        UserMapper userMapper = applicationContext.getBean(UserMapper.class);
         User user = userMapper.getUserById(4);
         System.out.println(user);
     }
